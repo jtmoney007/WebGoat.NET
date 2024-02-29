@@ -33,11 +33,11 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Change to the project directory
-        run: cd /WebGoat
+        run: cd WebGoat.NET
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
         with:
-          args: --directory=/WebGoat
+          args: --directory=WebGoat.NET
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   
