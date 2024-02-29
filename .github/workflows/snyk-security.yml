@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: List project directory
+        run: ls 
       - name: Change to the project directory
         run: cd ~/WebGoat.NET
       - name: Run Snyk to check for vulnerabilities
