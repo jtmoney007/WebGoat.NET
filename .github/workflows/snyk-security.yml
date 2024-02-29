@@ -10,7 +10,7 @@ jobs:
       - name: List files
         run: ls
       - name: Restore dependencies
-        run: dotnet restore WebGoat.Net.sln
+        run: dotnet restore ./WebGoat.NET.sln
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
         env:
