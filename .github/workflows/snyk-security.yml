@@ -15,29 +15,16 @@
 #
 # For more examples, including how to limit scans to only high-severity issues
 # and fail PR checks, see https://github.com/snyk/actions/
-
-name: Snyk Security
-
-on:
-  push:
-    branches: ["master" ]
-  pull_request:
-    branches: ["master"]
-
-permissions:
-  contents: read
-
+name: Example workflow using Snyk
+on: push
 jobs:
   security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Change to the project directory
-        run: cd WebGoat.NET
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/dotnet@master
-        with:
-          args: --directory=WebGoat.NET
+        uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  
+        with:
+          command: monitor
