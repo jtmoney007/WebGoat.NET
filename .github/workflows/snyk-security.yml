@@ -8,10 +8,10 @@ jobs:
       - name: List project directory
         run: ls 
       - name: Change to the project directory
-        run: cd ~/WebGoat.NET
+        run: cd WebGoat
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
         with:
-          args: --workdir=/WebGoat.NET
+          args: --workdir=WebGoat
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
