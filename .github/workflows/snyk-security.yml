@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Change to the project directory
+        run: cd WebGoat.NET
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
-        with:
-          args: --workdir=WebGoat.NET/WebGoat
+        #with:
+        #  args: --directory=WebGoat.NET
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
