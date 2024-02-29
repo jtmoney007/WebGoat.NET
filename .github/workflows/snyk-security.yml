@@ -8,6 +8,6 @@ jobs:
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
         with:
-          args: --directory=WebGoat.NET/WebGoat
+          args: --workdir=WebGoat.NET/WebGoat
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
