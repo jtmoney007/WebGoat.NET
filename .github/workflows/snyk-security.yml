@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      #- name: Setup .NET
-      #  uses: actions/setup-dotnet@3.0.3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@4
       - name: List files
         run: ls
       - name: Restore dependencies
